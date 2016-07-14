@@ -56,16 +56,10 @@ application:
 
 For a complete, working example, refer to the [login example](https://github.com/bencmbrook/passport-rescuetime/tree/master/examples/login).
 
-## Tests
-
-    $ npm install --dev
-    $ make test
-
-[![Build Status](https://secure.travis-ci.org/bencmbrook/passport-rescuetime.png)](http://travis-ci.org/bencmbrook/passport-rescuetime)
-
 ## Credits
 
   - [Ben Brook](http://github.com/bencmbrook)
+  - [Jared Hanson](https://github.com/jaredhanson)
 
 ## License
 
