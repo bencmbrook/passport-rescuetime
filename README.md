@@ -28,11 +28,14 @@ specifying a client ID, client secret, and callback URL.
         callbackURL: "http://127.0.0.1:3000/auth/rescuetime/callback"
       },
       function(accessToken, refreshToken, profile, done) {
-        User.findOrCreate({ rescuetimeId: profile.id }, function (err, user) {
+        User.findOrCreate({ .. }, function (err, user) {
           return done(err, user);
         });
       }
     ));
+
+Note that the RescueTime does not return profile information so the profile argument
+will be empty.
 
 #### Authenticate Requests
 
@@ -51,10 +54,6 @@ application:
         // Successful authentication, redirect home.
         res.redirect('/');
       });
-
-## Examples
-
-For a complete, working example, refer to the [login example](https://github.com/bencmbrook/passport-rescuetime/tree/master/examples/login).
 
 ## Credits
 
