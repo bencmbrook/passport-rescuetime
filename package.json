@@ -1,0 +1,59 @@
+{
+    "name": "passport-rescuetime",
+  "version": "0.1.5",
+  "description": "GitHub authentication strategy for Passport.",
+  "keywords": [
+    "passport",
+    "rescuetime",
+    "auth",
+    "authn",
+    "authentication",
+    "identity"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bencmbrook/passport-rescuetime.git"
+  },
+  "bugs": {
+    "url": "http://github.com/bencmbrook/passport-rescuetime/issues"
+  },
+  "author": {
+    "name": "Ben Brook",
+    "email": "benbrook@me.com",
+    "url": "http://www.bencmbrook.net/"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    }
+  ],
+  "main": "./lib/passport-rescuetime",
+  "dependencies": {
+    "pkginfo": "0.2.x",
+    "passport-oauth": "0.1.x"
+  },
+  "devDependencies": {
+    "vows": "0.6.x"
+  },
+  "scripts": {
+    "test": "NODE_PATH=lib node_modules/.bin/vows test/*-test.js"
+  },
+  "engines": {
+    "node": ">= 0.4.0"
+  },
+  "_npmVersion": "1.1.62",
+  "_npmUser": {
+    "name": "Ben Brook",
+    "email": "benbrook@me.com"
+  },
+  "maintainers": [
+    {
+      "name": "Ben Brook",
+      "email": "benbrook@me.com"
+    }
+  ],
+  "directories": {},
+  "readme": "ERROR: No README data found!",
+  "homepage": "https://rescuetime.com/bencmbrook/passport-rescuetime#readme"
+}
