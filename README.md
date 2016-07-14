@@ -34,8 +34,8 @@ specifying a client ID, client secret, and callback URL.
       }
     ));
 
-Note that the RescueTime does not return profile information so the profile argument
-will be empty.
+Note that RescueTime does not return user profile information so the profile
+option will remain empty.
 
 #### Authenticate Requests
 
