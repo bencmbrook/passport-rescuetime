@@ -22,13 +22,13 @@ and OAuth 2.0 tokens.  The strategy requires a `verify` callback, which accepts
 these credentials and calls `done` providing a user, as well as `options`
 specifying a client ID, client secret, and callback URL.
 
-    passport.use(new GitHubStrategy({
-        clientID: GITHUB_CLIENT_ID,
-        clientSecret: GITHUB_CLIENT_SECRET,
+    passport.use(new RescueTimeStrategy({
+        clientID: RESCUETIME_CLIENT_ID,
+        clientSecret: RESCUETIME_CLIENT_SECRET,
         callbackURL: "http://127.0.0.1:3000/auth/rescuetime/callback"
       },
       function(accessToken, refreshToken, profile, done) {
-        User.findOrCreate({ githubId: profile.id }, function (err, user) {
+        User.findOrCreate({ rescuetimeId: profile.id }, function (err, user) {
           return done(err, user);
         });
       }
@@ -65,4 +65,4 @@ For a complete, working example, refer to the [login example](https://github.com
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2011-2013 Ben Brook <[http://bencmbrook.net/](http://bencmbrook.net/)>
+Copyright (c) 2016 Ben Brook <[builtbybenbrook.com](http://builtbybenbrook.com)>
