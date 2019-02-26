@@ -64,4 +64,3 @@ application:
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2016 Ben Brook <[builtbybenbrook.com](http://builtbybenbrook.com)>
