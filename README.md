@@ -28,11 +28,11 @@ passport.use(new RescueTimeStrategy({
     clientSecret: RESCUETIME_CLIENT_SECRET,
     callbackURL: "http://127.0.0.1:3000/auth/rescuetime/callback"
   },
-  function(accessToken, refreshToken, profile, done) {
-    User.findOrCreate({ .. }, function (err, user) {
+  (accessToken, refreshToken, profile, done) => {
+    User.findOrCreate({ .. }, (err, user) => {
       return done(err, user);
     });
-  }
+  },
 ));
 ```
 
@@ -49,14 +49,16 @@ application:
 
 ```js
 app.get('/auth/rescuetime',
-  passport.authenticate('rescuetime'));
+  passport.authenticate('rescuetime'),
+);
 
 app.get('/auth/rescuetime/callback',
   passport.authenticate('rescuetime', { failureRedirect: '/login' }),
-  function(req, res) {
+  (req, res) => {
     // Successful authentication, redirect home.
     res.redirect('/');
-  });
+  },
+);
 ```
 
 ## Credits
