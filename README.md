@@ -22,6 +22,7 @@ and OAuth 2.0 tokens.  The strategy requires a `verify` callback, which accepts
 these credentials and calls `done` providing a user, as well as `options`
 specifying a client ID, client secret, and callback URL.
 
+```js
     passport.use(new RescueTimeStrategy({
         clientID: RESCUETIME_CLIENT_ID,
         clientSecret: RESCUETIME_CLIENT_SECRET,
@@ -33,6 +34,7 @@ specifying a client ID, client secret, and callback URL.
         });
       }
     ));
+```
 
 Note that RescueTime does not return user profile information so the profile
 option will remain empty.
@@ -45,6 +47,7 @@ authenticate requests.
 For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
+```js
     app.get('/auth/rescuetime',
       passport.authenticate('rescuetime'));
 
@@ -54,6 +57,7 @@ application:
         // Successful authentication, redirect home.
         res.redirect('/');
       });
+```
 
 ## Credits
 
