@@ -23,17 +23,17 @@ these credentials and calls `done` providing a user, as well as `options`
 specifying a client ID, client secret, and callback URL.
 
 ```js
-    passport.use(new RescueTimeStrategy({
-        clientID: RESCUETIME_CLIENT_ID,
-        clientSecret: RESCUETIME_CLIENT_SECRET,
-        callbackURL: "http://127.0.0.1:3000/auth/rescuetime/callback"
-      },
-      function(accessToken, refreshToken, profile, done) {
-        User.findOrCreate({ .. }, function (err, user) {
-          return done(err, user);
-        });
-      }
-    ));
+passport.use(new RescueTimeStrategy({
+    clientID: RESCUETIME_CLIENT_ID,
+    clientSecret: RESCUETIME_CLIENT_SECRET,
+    callbackURL: "http://127.0.0.1:3000/auth/rescuetime/callback"
+  },
+  function(accessToken, refreshToken, profile, done) {
+    User.findOrCreate({ .. }, function (err, user) {
+      return done(err, user);
+    });
+  }
+));
 ```
 
 Note that RescueTime does not return user profile information so the profile
@@ -48,15 +48,15 @@ For example, as route middleware in an [Express](http://expressjs.com/)
 application:
 
 ```js
-    app.get('/auth/rescuetime',
-      passport.authenticate('rescuetime'));
+app.get('/auth/rescuetime',
+  passport.authenticate('rescuetime'));
 
-    app.get('/auth/rescuetime/callback',
-      passport.authenticate('rescuetime', { failureRedirect: '/login' }),
-      function(req, res) {
-        // Successful authentication, redirect home.
-        res.redirect('/');
-      });
+app.get('/auth/rescuetime/callback',
+  passport.authenticate('rescuetime', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/');
+  });
 ```
 
 ## Credits
